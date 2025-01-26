@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Objects;
 
-public class Rectangle {
+public class Rectangle extends Shape {
     int rectangleWidth;
     int rectangleHeight;
 
@@ -11,19 +11,22 @@ public class Rectangle {
         this.rectangleWidth = rectangleWidth;
     }
 
-    private int calculateRectangleArea(){
-        return this.rectangleWidth * this.rectangleHeight;
-    }
-    public int getRectangleArea() {
-        return calculateRectangleArea();
-    }
 
-    private int calculateRectanglePerimeter(){
+    @Override
+    public double calculateShape() {
         return 2 * (this.rectangleWidth + this.rectangleHeight);
     }
 
-    public int getRectanglePerimeter() {
-        return calculateRectanglePerimeter();
+    public double getRectanglePerimeter() {
+        return calculateShape();
+    }
+    @Override
+    public double calculateArea() {
+        return this.rectangleWidth * this.rectangleHeight;
+    }
+
+    public double getRectangleArea() {
+        return calculateArea();
     }
 
     public int getRectangleWidth() {
@@ -62,4 +65,6 @@ public class Rectangle {
     public int hashCode() {
         return Objects.hash(rectangleWidth, rectangleHeight);
     }
+
+
 }

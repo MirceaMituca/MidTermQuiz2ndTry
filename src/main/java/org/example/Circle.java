@@ -1,4 +1,63 @@
 package org.example;
 
-public class Circle {
+import java.util.Objects;
+
+public class Circle extends Shape{
+
+    double radius;
+    double pi = 3.14;
+
+    public Circle(int radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateShape() {
+        return this.pi * this.radius * 2;
+    }
+
+    public double getRectanglePerimeter() {
+        return calculateShape();
+    }
+    @Override
+    public double calculateArea() {
+        return this.pi * this.radius * this.radius;
+    }
+
+    public double getRectangleArea() {
+        return calculateArea();
+    }
+
+    public double getPi() {
+        return pi;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return radius == circle.radius && Double.compare(pi, circle.pi) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(radius, pi);
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", pi=" + pi +
+                '}';
+    }
 }

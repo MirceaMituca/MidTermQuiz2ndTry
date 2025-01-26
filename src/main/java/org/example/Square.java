@@ -2,27 +2,28 @@ package org.example;
 
 import java.util.Objects;
 
-public class Square{
+public class Square extends Shape {
     int squareSide;
 
     public Square(int squareSide) {
         this.squareSide = squareSide;
     }
 
-    private int calculateSquareArea(){
+    @Override
+    public double calculateShape(){
         return squareSide * squareSide;
     }
 
-    public int getSquareArea() {
-        return calculateSquareArea();
+    public double getSquarePerimeter() {
+        return calculateShape();
     }
 
-    private int calculateSquarePerimeter(){
+    @Override
+    public double calculateArea(){
         return squareSide * 4;
     }
-
-    public int getSquarePerimeter() {
-        return calculateSquarePerimeter();
+    public double getSquareArea() {
+        return calculateArea();
     }
 
     public int getSquareSide() {
