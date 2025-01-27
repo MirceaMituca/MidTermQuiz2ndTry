@@ -10,7 +10,6 @@ public class ShapeAnalysis {
         if (addedShapeValues.contains(pickedShape)) {
             System.out.println("You already tried to add shape");
         } else {
-            // Add the shape to the set
             addedShapeValues.add(pickedShape);
             System.out.println("Shape added successfully.");
         }

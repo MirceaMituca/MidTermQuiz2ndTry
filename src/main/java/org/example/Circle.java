@@ -45,12 +45,12 @@ public class Circle extends Shape{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Circle circle = (Circle) o;
-        return radius == circle.radius && Double.compare(pi, circle.pi) == 0;
+        return getClass() == circle.getClass();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(radius, pi);
+        return Objects.hashCode(getClass());
     }
 
     @Override

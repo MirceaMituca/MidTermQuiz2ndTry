@@ -52,12 +52,12 @@ public class Triangle extends Shape{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Triangle triangle = (Triangle) o;
-        return Double.compare(getBase(), triangle.getBase()) == 0 && Double.compare(getHeight(), triangle.getHeight()) == 0 && Double.compare(getHypotenuse(), triangle.getHypotenuse()) == 0;
+        return getClass() == triangle.getClass();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getBase(), getHeight(), getHypotenuse());
+        return Objects.hashCode(getClass());
     }
 
     @Override

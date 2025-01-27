@@ -39,12 +39,12 @@ public class Square extends Shape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Square square = (Square) o;
-        return squareSide == square.squareSide;
+        return getClass() == square.getClass();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(squareSide);
+        return Objects.hashCode(getClass());
     }
 
     @Override

@@ -58,12 +58,12 @@ public class Rectangle extends Shape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rectangle rectangle = (Rectangle) o;
-        return rectangleWidth == rectangle.rectangleWidth && rectangleHeight == rectangle.rectangleHeight;
+        return getClass() == rectangle.getClass();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rectangleWidth, rectangleHeight);
+        return Objects.hashCode(getClass());
     }
 
 
